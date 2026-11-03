@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>የሰርግ ጥሪ ግብዣ</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%);
+            color: #4a5568;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+        .card {
+            background: white;
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 40px 20px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(226, 149, 149, 0.2);
+            border: 2px solid #feb2b2;
+        }
+        .hearts { color: #e53e3e; font-size: 1.5em; margin: 10px; }
+        h1 { color: #b7791f; font-size: 2.3em; margin-bottom: 5px; }
+        .guest-box {
+            background-color: #fffaf0;
+            border: 1px dashed #b7791f;
+            padding: 10px;
+            margin: 20px auto;
+            max-width: 80%;
+            border-radius: 8px;
+            font-size: 1.2em;
+            color: #744210;
+        }
+        .details {
+            font-size: 1.1em;
+            line-height: 2;
+            margin: 25px 0;
+            border-top: 1px solid #fee2e2;
+            border-bottom: 1px solid #fee2e2;
+            padding: 20px 0;
+        }
+        .btn {
+            background-color: #e53e3e;
+            color: white;
+            border: none;
+            padding: 12px 35px;
+            font-size: 1em;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+        .btn:hover { background-color: #9b2c2c; transform: translateY(-2px); }
+        .music-box { margin-top: 25px; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="hearts">♥ ✨ ♥</div>
+        <h1>የሰርግ ክብር ግብዣ</h1>
+        
+        <!-- የእንግዳው ስም የሚገባበት ቦታ -->
+        <div class="guest-box">
+            የክብር እንግዳ፦ <strong id="guestName">ውድ እንግዳችን</strong>
+        </div>
+
+        <p style="font-size:1.1em; font-style:italic;">በፍቅር የተመሠረተውን ትዳራችንን የምናበስርበት የሰርግ ደስታችን ተካፋይ እንድትሆኑ በታላቅ አክብሮት ጠርተንዎታል።</p>
+        
+        <div class="details">
+            <p><strong>📅 ቀን፦</strong> [የሰርጉን ቀን እዚህ ይጻፉ]</p>
+            <p><strong>⏰ ሰዓት፦</strong> ከቀኑ [ሰዓት ይጻፉ] ጀምሮ</p>
+            <p><strong>📍 ቦታ፦</strong> [የአዳራሹን/ሆቴሉን ስም ይጻፉ]</p>
+        </div>
+
+        <button class="btn" onclick="alert('ስለ ምላሽዎ እናመሰግናለን! በሰርጋችን ቀን በደስታ እንጠብቅዎታለን።')">እገኛለሁ 👍</button>
+
+        <!-- የሙዚቃ ማጫወቻ (የራስዎን የሙዚቃ ሊንክ መተካት ይችላሉ) -->
+        <div class="music-box">
+            <p style="font-size: 0.8em; color: #718096;">የሰርግ መዝሙር/ሙዚቃ ያዳምጡ 👇</p>
+            <audio controls>
+                <source src="https://soundhelix.com" type="audio/mpeg">
+                የእርስዎ ብሮውዘር አውዲዮ አይደግፍም።
+            </audio>
+        </div>
+    </div>
+
+    <script>
+        // ከሊንኩ ላይ ስም መርጦ ገጹ ላይ የሚጭን ሲስተም
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name');
+        if (name) {
+            document.getElementById('guestName').innerText = name.replace(/_/g, ' ');
+        }
+    </script>
+</body>
+</html>
